@@ -1,31 +1,35 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
+    <title>Website Kampung Blokang</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kampung Blokang</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Kampung Blokang</h1>
-        <p>RT 001 / RW 006 - Jl. Raya Sukatani, Desa Karang Anyar, Kec. Karang Bahagia</p>
-    </header>
-    <nav>
-        <a href="#">Beranda</a> |
-        <a href="#">Profil</a> |
-        <a href="#">Data RT</a> |
-        <a href="#">Pengaduan</a>
-    </nav>
+    <header><h1>Kampung Blokang - RT 001 RW 006</h1></header>
     <main>
-        <section>
-            <h2>Selamat Datang</h2>
-            <p>Website resmi informasi Kampung Blokang.</p>
-        </section>
+        <h2>Form Pengaduan Warga</h2>
+        <form id="pengaduan-form">
+            <input type="text" id="nama" placeholder="Nama"><br><br>
+            <textarea id="isi" placeholder="Isi Pengaduan" rows="4" cols="40"></textarea><br><br>
+            <button type="submit">Kirim Pengaduan</button>
+        </form>
+        <h2>Admin Panel (Login)</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email"><br><br>
+            <input type="password" id="password" placeholder="Password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <div id="admin-section" style="display:none;">
+            <h3>Data Pengaduan:</h3>
+            <ul id="pengaduan-list"></ul>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Kampung Blokang</p>
-    </footer>
+    <footer><p>Jl. Raya Sukatani, Desa Karang Anyar, Kec. Karang Bahagia</p></footer>
+    <script src="main.js"></script>
 </body>
 </html>
