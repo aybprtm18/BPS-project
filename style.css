@@ -1,10 +1,10 @@
 
 body { font-family: Arial; padding: 10px; background: #68f774 url('http://www.transparenttextures.com/patterns/lined-paper-2.png'); }
-header, footer { background: #e8f5e9 url('http://www.transparenttextures.com/patterns/lined-paper-2.png'); color: white; padding: 10px; text-align: center; position: relative; }
+header, footer { background: #2e7d32 url('http://www.transparenttextures.com/patterns/lined-paper-2.png'); color: white; padding: 10px; text-align: center; position: relative; }
 main { background: white url('http://www.transparenttextures.com/patterns/lined-paper-2.png'); padding: 20px; border-radius: 10px; }
 input, textarea { width: 100%; padding: 10px; margin: 5px 0; }
 button { padding: 10px 20px; background: #2e7d32; color: white; border: none; border-radius: 5px; }
-img.logo { height: 60px; position: absolute; top: 10px; }
+img.logo { height: 80px; position: absolute; top: 10px; }
 img.logo.left { left: 30px; }
 img.logo.right { right: 30px; }
 h1.main-title { margin-top: 40px; }
