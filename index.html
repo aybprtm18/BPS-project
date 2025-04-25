@@ -62,6 +62,11 @@
     <li>Rabu: RT 003</li>
 </ul>
 
+
+<h2>Galeri Foto Kegiatan</h2>
+<input type="file" id="upload-foto" multiple accept="image/*"><br><br>
+<div id="galeri-foto" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></div>
+
 <h2>Lokasi Kampung Blokang</h2>
 <iframe
     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1087.7653929889868!2d107.1741700854346!3d-6.203298591918219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1745520221834!5m2!1sid!2sid"
@@ -95,5 +100,56 @@
 </script>
 
     <script src="main.js"></script>
+
+<script>
+    const inputFoto = document.getElementById("upload-foto");
+    const galeri = document.getElementById("galeri-foto");
+
+    inputFoto.addEventListener("change", function () {
+        const files = Array.from(inputFoto.files);
+        files.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.alt = "Foto Kegiatan";
+                img.style.width = "200px";
+                img.style.margin = "5px";
+                img.style.borderRadius = "8px";
+                img.style.cursor = "pointer";
+                img.onclick = function () {
+                    openLightbox(e.target.result);
+                };
+                galeri.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+
+    function openLightbox(src) {
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.backgroundColor = "rgba(0,0,0,0.8)";
+        overlay.style.display = "flex";
+        overlay.style.alignItems = "center";
+        overlay.style.justifyContent = "center";
+        overlay.style.zIndex = 9999;
+        overlay.onclick = () => document.body.removeChild(overlay);
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.style.maxWidth = "90%";
+        img.style.maxHeight = "90%";
+        img.style.borderRadius = "10px";
+        overlay.appendChild(img);
+
+        document.body.appendChild(overlay);
+    }
+</script>
+
 </body>
 </html>
