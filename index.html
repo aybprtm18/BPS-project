@@ -1,47 +1,69 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
+    <title>Website Kampung Blokang</title>
     <meta charset="UTF-8">
-    <title>Blokang Peduli Sesama</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"></script>
 </head>
 <body>
     <header>
-        <img src="logo.png" class="logo left">
+        <img src="logo.png" class="logo left" alt="Logo Kiri">
+        <img src="logo.png" class="logo right" alt="Logo Kanan">
         <h1 class="main-title">BPS</h1>
         <p class="subtext">BLOKANG PEDULI SESAMA</p>
         <p class="subtext">KP. BLOKANG RT 001 RW 006</p>
-        <img src="logo.png" class="logo right">
     </header>
     <main>
-        <h2>Data Warga</h2>
-        <table border="1" width="100%">
-            <tr><th>Nama</th><th>Usia</th><th>Pekerjaan</th></tr>
-            <tr><td>Budi</td><td>40</td><td>Petani</td></tr>
-            <tr><td>Siti</td><td>35</td><td>Ibu Rumah Tangga</td></tr>
-        </table>
+        <h2>Form Pengaduan Warga</h2>
+        <form id="pengaduan-form">
+            <input type="text" id="nama" placeholder="Nama"><br><br>
+            <textarea id="isi" placeholder="Isi Pengaduan" rows="4" cols="40"></textarea><br><br>
+            <button type="submit">Kirim Pengaduan</button>
+        </form>
+        <h2>Admin</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email"><br><br>
+            <input type="password" id="password" placeholder="Password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <div id="admin-section" style="display:none;">
+            <h3>Data Pengaduan:</h3>
+            <ul id="pengaduan-list"></ul>
+        </div>
+    
+<hr>
+<h2>Data Warga</h2>
+<table border="1" width="100%">
+    <tr><th>Nama</th><th>Usia</th><th>Pekerjaan</th></tr>
+    <tr><td>Edi Martono</td><td>40</td><td>Tukang Air</td></tr>
+    <tr><td>Yunus</td><td>35</td><td>Tukang Gas</td></td></tr>
+</table>
 
-        <h2>Proyek Kerja</h2>
-        <ul>
-            <li>Perbaikan Jalan - Mei 2025</li>
-            <li>Pembangunan Pos Kamling Baru - Juni 2025</li>
-        </ul>
+<h2>Proyek Kerja</h2>
+<ul>
+    <li>Perbaikan Jalan - Mei 2025</li>
+    <li>Pembangunan Pos Kamling Baru - Juni 2025</li>
+</ul>
 
-        <h2>Jadwal Pos Kamling</h2>
-        <ul>
-            <li>Senin: RT 001</li>
-            <li>Selasa: RT 002</li>
-        </ul>
+<h2>Jadwal Pos Kamling</h2>
+<ul>
+    <li>Senin: RT 001</li>
+    <li>Selasa: RT 002</li>
+    <li>Rabu: RT 003</li>
+</ul>
 
-        <h2>Lokasi Kampung Blokang</h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.340321863877!2d107.169002!3d-6.220456"
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-    </main>
-    <footer>
-        <p>&copy; 2025 BPS Kampung Blokang</p>
-    </footer>
+<h2>Lokasi Kampung Blokang</h2>
+<iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1087.7653929889868!2d107.1741700854346!3d-6.203298591918219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1745520221834!5m2!1sid!2sid"
+    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+
+</main>
+    <footer><p>Jl. Raya Sukatani, Desa. Karang Anyar, Kec. Karang Bahagia</p></footer>
+    <script src="main.js"></script>
 </body>
 </html>
